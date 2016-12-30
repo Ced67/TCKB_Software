@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Project version="2G - 1.7.8" name="Keyboard_Controller">
+  <Target name="Keyboard_Controller" isCurrent="1">
+    <Device manufacturerId="9" manufacturerName="ST" chipId="878" chipName="STM32L053C8T6" boardId="" boardName=""/>
+    <BuildOption>
+      <Compile>
+        <Option name="OptimizationLevel" value="1"/>
+        <Option name="UseFPU" value="0"/>
+        <Option name="UserEditCompiler" value=""/>
+        <Option name="SupportCPlusplus" value="0"/>
+        <Includepaths>
+          <Includepath path="."/>
+        </Includepaths>
+        <DefinedSymbols>
+          <Define name="STM32L053C8T6"/>
+          <Define name="STM32L053xx"/>
+          <Define name="USE_HAL_DRIVER"/>
+          <Define name="_PROJECT_KEYBOARD_CONTROLLER"/>
+        </DefinedSymbols>
+      </Compile>
+      <Link useDefault="0">
+        <Option name="DiscardUnusedSection" value="0"/>
+        <Option name="UserEditLinkder" value=""/>
+        <Option name="UseMemoryLayout" value="1"/>
+        <Option name="nostartfiles" value="1"/>
+        <Option name="LTO" value="0"/>
+        <Option name="IsNewStartupCode" value="1"/>
+        <Option name="Library" value="Not use C Library"/>
+        <Option name="UserEditLinker" value="--entry=main; "/>
+        <Option name="DiscardUnusedSections" value="1"/>
+        <LinkedLibraries/>
+        <MemoryAreas debugInFlashNotRAM="1">
+          <Memory name="IROM1" type="ReadOnly" size="0x00010000" startValue="0x08000000"/>
+          <Memory name="IRAM1" type="ReadWrite" size="0x00002000" startValue="0x20000000"/>
+          <Memory name="IROM2" type="ReadOnly" size="" startValue=""/>
+          <Memory name="IRAM2" type="ReadWrite" size="" startValue=""/>
+        </MemoryAreas>
+        <LocateLinkFile path="../../../../../coocox/coide/configuration/programdata/keyboard_controller/arm-gcc-link.ld" type="0"/>
+      </Link>
+      <Output>
+        <Option name="OutputFileType" value="0"/>
+        <Option name="Path" value="./"/>
+        <Option name="Name" value="Keyboard_Controller"/>
+        <Option name="HEX" value="1"/>
+        <Option name="BIN" value="1"/>
+      </Output>
+      <User>
+        <UserRun name="Run#1" type="Before" checked="0" value=""/>
+        <UserRun name="Run#1" type="After" checked="0" value=""/>
+      </User>
+    </BuildOption>
+    <DebugOption>
+      <Option name="org.coocox.codebugger.gdbjtag.core.adapter" value="J-Link"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.debugMode" value="SWD"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.clockDiv" value="1M"/>
+      <Option name="org.coocox.codebugger.gdbjtag.corerunToMain" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.jlinkgdbserver" value="C:\Program Files (x86)\SEGGER\JLink_V610m\JLinkGDBServerCL.exe"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.userDefineGDBScript" value=""/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.targetEndianess" value="0"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.jlinkResetMode" value="Type 3: Connect under Reset"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.resetMode" value="SYSRESETREQ"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.ifSemihost" value="0"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.ifCacheRom" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.ipAddress" value="127.0.0.1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.portNumber" value="2331"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.autoDownload" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.verify" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.downloadFuction" value="Erase Effected"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.defaultAlgorithm" value="STM32L0xx_64.elf"/>
+      <Option name="org.coocox.codebugger.gdbjtag.coredebugInRamInitCommands" value="cd C:/Users/Cedric/__Projets_Coocox/_TCKB_FreeRTOS/Keyboard_Controller/Keyboard_Controller/Debug/bin restore Keyboard_Controller.elf set {unsigned int*}0xE000ED08 = 0x20000000 set $sp = {unsigned int*}0x20000000 set $pc = {unsigned int*}0x20000004 "/>
+    </DebugOption>
+    <ExcludeFile/>
+  </Target>
+  <Components path="./">
+    <Component id="2104" name="cmsis_boot" path="" type="2"/>
+  </Components>
+  <Files>
+    <File name="Middlewares/ST/STM32_USB_Device_Library/Core" path="" type="2"/>
+    <File name="Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_pwr_ex.h" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_pwr_ex.h" type="1"/>
+    <File name="Tasks/USBTask.c" path="Tasks/USBTask.c" type="1"/>
+    <File name="Middlewares/Third_Party/FreeRTOS/Source/tasks.c" path="STM32CubeMX_Keyboard_Controller_48p/Middlewares/Third_Party/FreeRTOS/Source/tasks.c" type="1"/>
+    <File name="Middlewares/Third_Party/FreeRTOS/Source/croutine.c" path="STM32CubeMX_Keyboard_Controller_48p/Middlewares/Third_Party/FreeRTOS/Source/croutine.c" type="1"/>
+    <File name="Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_gpio.c" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_gpio.c" type="1"/>
+    <File name="Middlewares/ST/STM32_USB_Device_Library" path="" type="2"/>
+    <File name="Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_crc.c" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_crc.c" type="1"/>
+    <File name="Tasks" path="" type="2"/>
+    <File name="Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h" path="STM32CubeMX_Keyboard_Controller_48p/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h" type="1"/>
+    <File name="Src/usbd_desc_TCKB.c" path="STM32CubeMX_Keyboard_Controller_48p/Src/usbd_desc_TCKB.c" type="1"/>
+    <File name="Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM0/port.c" path="STM32CubeMX_Keyboard_Controller_48p/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM0/port.c" type="1"/>
+    <File name="Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal.h" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal.h" type="1"/>
+    <File name="Drivers/CMSIS/Include/core_cmSimd.h" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/CMSIS/Include/core_cmSimd.h" type="1"/>
+    <File name="Middlewares/Third_Party/FreeRTOS/Source/include/task.h" path="STM32CubeMX_Keyboard_Controller_48p/Middlewares/Third_Party/FreeRTOS/Source/include/task.h" type="1"/>
+    <File name="Core/Leds.c" path="Core/Leds.c" type="1"/>
+    <File name="Middlewares/ST/STM32_USB_Device_Library/Class/TCKB_HID" path="" type="2"/>
+    <File name="TCKBSerialProto/TCKBSerialProto.c" path="../TCKBSerialProto/TCKBSerialProto.c" type="1"/>
+    <File name="Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h" type="1"/>
+    <File name="Src/stm32l0xx_hal_timebase_TIM.c" path="STM32CubeMX_Keyboard_Controller_48p/Src/stm32l0xx_hal_timebase_TIM.c" type="1"/>
+    <File name="Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_flash_ex.h" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_flash_ex.h" type="1"/>
+    <File name="Common/Mailboxes.c" path="../Common/Mailboxes.c" type="1"/>
+    <File name="Core/Leds.h" path="Core/Leds.h" type="1"/>
+    <File name="Misc" path="" type="2"/>
+    <File name="Inc/stm32l0xx_it.h" path="STM32CubeMX_Keyboard_Controller_48p/Inc/stm32l0xx_it.h" type="1"/>
+    <File name="Middlewares/Third_Party/FreeRTOS/Source/list.c" path="STM32CubeMX_Keyboard_Controller_48p/Middlewares/Third_Party/FreeRTOS/Source/list.c" type="1"/>
+    <File name="TCKBSerialProto/TCKBSerialProto.h" path="../TCKBSerialProto/TCKBSerialProto.h" type="1"/>
+    <File name="Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_pwr_ex.c" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_pwr_ex.c" type="1"/>
+    <File name="Drivers/CMSIS/Include/cmsis_gcc.h" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/CMSIS/Include/cmsis_gcc.h" type="1"/>
+    <File name="Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_uart.h" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_uart.h" type="1"/>
+    <File name="Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_spi.c" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_spi.c" type="1"/>
+    <File name="Misc/Utils.c" path="../Misc/Utils.c" type="1"/>
+    <File name="Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_uart_ex.h" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_uart_ex.h" type="1"/>
+    <File name="Inc" path="" type="2"/>
+    <File name="Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h" path="STM32CubeMX_Keyboard_Controller_48p/Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h" type="1"/>
+    <File name="Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c" path="STM32CubeMX_Keyboard_Controller_48p/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c" type="1"/>
+    <File name="Middlewares" path="" type="2"/>
+    <File name="Middlewares/Third_Party/FreeRTOS/Source/timers.c" path="STM32CubeMX_Keyboard_Controller_48p/Middlewares/Third_Party/FreeRTOS/Source/timers.c" type="1"/>
+    <File name="Drivers/CMSIS/Include/core_cm0plus.h" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/CMSIS/Include/core_cm0plus.h" type="1"/>
+    <File name="Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang" path="" type="2"/>
+    <File name="Tasks/LedTask.c" path="Tasks/LedTask.c" type="1"/>
+    <File name="Middlewares/Third_Party" path="" type="2"/>
+    <File name="Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_tim.c" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_tim.c" type="1"/>
+    <File name="Middlewares/Third_Party/FreeRTOS/Source/portable/GCC" path="" type="2"/>
+    <File name="Inc/usbd_conf.h" path="STM32CubeMX_Keyboard_Controller_48p/Inc/usbd_conf.h" type="1"/>
+    <File name="Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h" path="STM32CubeMX_Keyboard_Controller_48p/Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h" type="1"/>
+    <File name="Core/Nkro_report.h" path="Core/Nkro_report.h" type="1"/>
+    <File name="Drivers/STM32L0xx_HAL_Driver/Src" path="" type="2"/>
+    <File name="Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_dma.h" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_dma.h" type="1"/>
+    <File name="Drivers/STM32L0xx_HAL_Driver" path="" type="2"/>
+    <File name="Middlewares/ST/STM32_USB_Device_Library/Class/TCKB_HID/Inc/usbd_hid.h" path="STM32CubeMX_Keyboard_Controller_48p/Middlewares/ST/STM32_USB_Device_Library/Class/TCKB_HID/Inc/usbd_hid.h" type="1"/>
+    <File name="Drivers/CMSIS/Include/core_cmFunc.h" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/CMSIS/Include/core_cmFunc.h" type="1"/>
+    <File name="Middlewares/ST/STM32_USB_Device_Library/Class" path="" type="2"/>
+    <File name="Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_i2c_ex.h" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_i2c_ex.h" type="1"/>
+    <File name="Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_crc_ex.h" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_crc_ex.h" type="1"/>
+    <File name="Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_pcd.h" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_pcd.h" type="1"/>
+    <File name="Drivers/CMSIS/Include" path="" type="2"/>
+    <File name="Drivers/STM32L0xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/STM32L0xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h" type="1"/>
+    <File name="Middlewares/ST/STM32_USB_Device_Library/Class/TCKB_HID/Inc" path="" type="2"/>
+    <File name="Inc/stm32l0xx_hal_conf.h" path="STM32CubeMX_Keyboard_Controller_48p/Inc/stm32l0xx_hal_conf.h" type="1"/>
+    <File name="Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM0" path="" type="2"/>
+    <File name="Middlewares/ST/STM32_USB_Device_Library/Class/TCKB_HID/Src/usbd_hid.c" path="STM32CubeMX_Keyboard_Controller_48p/Middlewares/ST/STM32_USB_Device_Library/Class/TCKB_HID/Src/usbd_hid.c" type="1"/>
+    <File name="Inc/usb_device.h" path="STM32CubeMX_Keyboard_Controller_48p/Inc/usb_device.h" type="1"/>
+    <File name="Inc/usbd_desc.h" path="STM32CubeMX_Keyboard_Controller_48p/Inc/usbd_desc.h" type="1"/>
+    <File name="Core/6kro_report.c" path="Core/6kro_report.c" type="1"/>
+    <File name="Src/main.c" path="STM32CubeMX_Keyboard_Controller_48p/Src/main.c" type="1"/>
+    <File name="Layouts" path="" type="2"/>
+    <File name="Drivers/CMSIS/Include/core_cmInstr.h" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/CMSIS/Include/core_cmInstr.h" type="1"/>
+    <File name="Tasks/KeyboardControllerTasksCommon.h" path="Tasks/KeyboardControllerTasksCommon.h" type="1"/>
+    <File name="Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_flash_ramfunc.h" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_flash_ramfunc.h" type="1"/>
+    <File name="Core/Nkro_report.c" path="Core/Nkro_report.c" type="1"/>
+    <File name="Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h" path="STM32CubeMX_Keyboard_Controller_48p/Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h" type="1"/>
+    <File name="Src/stm32l0xx_it.c" path="STM32CubeMX_Keyboard_Controller_48p/Src/stm32l0xx_it.c" type="1"/>
+    <File name="Core/Keys.h" path="Core/Keys.h" type="1"/>
+    <File name="Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOSConfig_template.h" path="STM32CubeMX_Keyboard_Controller_48p/Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOSConfig_template.h" type="1"/>
+    <File name="Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_crc_ex.c" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_crc_ex.c" type="1"/>
+    <File name="Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h" path="STM32CubeMX_Keyboard_Controller_48p/Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h" type="1"/>
+    <File name="Core/6kro_report.h" path="Core/6kro_report.h" type="1"/>
+    <File name="Tasks/ScanTask.c" path="Tasks/ScanTask.c" type="1"/>
+    <File name="Src/system_stm32l0xx.c" path="STM32CubeMX_Keyboard_Controller_48p/Src/system_stm32l0xx.c" type="1"/>
+    <File name="Inc/FreeRTOSConfig.h" path="STM32CubeMX_Keyboard_Controller_48p/Inc/FreeRTOSConfig.h" type="1"/>
+    <File name="Common/Mailboxes.h" path="../Common/Mailboxes.h" type="1"/>
+    <File name="Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h" path="STM32CubeMX_Keyboard_Controller_48p/Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h" type="1"/>
+    <File name="Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_pcd_ex.h" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_pcd_ex.h" type="1"/>
+    <File name="Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h" path="STM32CubeMX_Keyboard_Controller_48p/Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h" type="1"/>
+    <File name="Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_def.h" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_def.h" type="1"/>
+    <File name="Drivers/STM32L0xx_HAL_Driver/Inc/Legacy" path="" type="2"/>
+    <File name="Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_uart_ex.c" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_uart_ex.c" type="1"/>
+    <File name="Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_tim_ex.c" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_tim_ex.c" type="1"/>
+    <File name="Middlewares/Third_Party/FreeRTOS/Source/include/list.h" path="STM32CubeMX_Keyboard_Controller_48p/Middlewares/Third_Party/FreeRTOS/Source/include/list.h" type="1"/>
+    <File name="Middlewares/Third_Party/FreeRTOS/Source/include/StackMacros.h" path="STM32CubeMX_Keyboard_Controller_48p/Middlewares/Third_Party/FreeRTOS/Source/include/StackMacros.h" type="1"/>
+    <File name="Core/names_key.h" path="Core/names_key.h" type="1"/>
+    <File name="cmsis_boot" path="" type="2"/>
+    <File name="Src/freertos.c" path="STM32CubeMX_Keyboard_Controller_48p/Src/freertos.c" type="1"/>
+    <File name="Middlewares/Third_Party/FreeRTOS/Source/include/portable.h" path="STM32CubeMX_Keyboard_Controller_48p/Middlewares/Third_Party/FreeRTOS/Source/include/portable.h" type="1"/>
+    <File name="Drivers/CMSIS/Include/arm_common_tables.h" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/CMSIS/Include/arm_common_tables.h" type="1"/>
+    <File name="Drivers" path="" type="2"/>
+    <File name="cmsis_boot/startup" path="" type="2"/>
+    <File name="Core/HID_Report.c" path="Core/HID_Report.c" type="1"/>
+    <File name="Drivers/CMSIS/Device/ST" path="" type="2"/>
+    <File name="Core/Keys.c" path="Core/Keys.c" type="1"/>
+    <File name="Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_pcd_ex.c" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_pcd_ex.c" type="1"/>
+    <File name="Drivers/CMSIS/Include/core_cm0.h" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/CMSIS/Include/core_cm0.h" type="1"/>
+    <File name="Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM0/portmacro.h" path="STM32CubeMX_Keyboard_Controller_48p/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM0/portmacro.h" type="1"/>
+    <File name="Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h" path="STM32CubeMX_Keyboard_Controller_48p/Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h" type="1"/>
+    <File name="Middlewares/Third_Party/FreeRTOS/Source/queue.c" path="STM32CubeMX_Keyboard_Controller_48p/Middlewares/Third_Party/FreeRTOS/Source/queue.c" type="1"/>
+    <File name="Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_1.c" path="STM32CubeMX_Keyboard_Controller_48p/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_1.c" type="1"/>
+    <File name="Layouts/Layout.h" path="Layouts/Layout.h" type="1"/>
+    <File name="Drivers/CMSIS/Device/ST/STM32L0xx/Include" path="" type="2"/>
+    <File name="Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_uart.c" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_uart.c" type="1"/>
+    <File name="Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c" type="1"/>
+    <File name="Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_flash.h" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_flash.h" type="1"/>
+    <File name="cmsis_boot/startup/startup_stm32l053xx.c" path="cmsis_boot/startup/startup_stm32l053xx.c" type="1"/>
+    <File name="Middlewares/Third_Party/FreeRTOS" path="" type="2"/>
+    <File name="Common/TCKB_Common_Constants.h" path="../Common/TCKB_Common_Constants.h" type="1"/>
+    <File name="Middlewares/Third_Party/FreeRTOS/Source/include/croutine.h" path="STM32CubeMX_Keyboard_Controller_48p/Middlewares/Third_Party/FreeRTOS/Source/include/croutine.h" type="1"/>
+    <File name="Tasks/CommTask.c" path="Tasks/CommTask.c" type="1"/>
+    <File name="Core/HID_Report.h" path="Core/HID_Report.h" type="1"/>
+    <File name="Src/usbd_conf.c" path="STM32CubeMX_Keyboard_Controller_48p/Src/usbd_conf.c" type="1"/>
+    <File name="Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_spi.h" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_spi.h" type="1"/>
+    <File name="Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c" path="STM32CubeMX_Keyboard_Controller_48p/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c" type="1"/>
+    <File name="Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_cortex.c" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_cortex.c" type="1"/>
+    <File name="TCKBSerialProto" path="" type="2"/>
+    <File name="Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS" path="" type="2"/>
+    <File name="Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_pwr.h" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_pwr.h" type="1"/>
+    <File name="Src/usb_device.c" path="STM32CubeMX_Keyboard_Controller_48p/Src/usb_device.c" type="1"/>
+    <File name="Layouts/Layout_Full.c" path="Layouts/Layout_Full.c" type="1"/>
+    <File name="Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l053xx.h" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l053xx.h" type="1"/>
+    <File name="Drivers/CMSIS/Device" path="" type="2"/>
+    <File name="Drivers/CMSIS/Include/arm_math.h" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/CMSIS/Include/arm_math.h" type="1"/>
+    <File name="Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c" path="STM32CubeMX_Keyboard_Controller_48p/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c" type="1"/>
+    <File name="Src/stm32l0xx_hal_msp.c" path="STM32CubeMX_Keyboard_Controller_48p/Src/stm32l0xx_hal_msp.c" type="1"/>
+    <File name="Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_gpio.h" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_gpio.h" type="1"/>
+    <File name="Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c" path="STM32CubeMX_Keyboard_Controller_48p/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c" type="1"/>
+    <File name="Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_i2c.h" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_i2c.h" type="1"/>
+    <File name="Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_tim.h" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_tim.h" type="1"/>
+    <File name="Common" path="" type="2"/>
+    <File name="Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_rcc_ex.h" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_rcc_ex.h" type="1"/>
+    <File name="Middlewares/ST/STM32_USB_Device_Library/Core/Inc" path="" type="2"/>
+    <File name="Middlewares/Third_Party/FreeRTOS/Source/include/queue.h" path="STM32CubeMX_Keyboard_Controller_48p/Middlewares/Third_Party/FreeRTOS/Source/include/queue.h" type="1"/>
+    <File name="Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h" path="STM32CubeMX_Keyboard_Controller_48p/Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h" type="1"/>
+    <File name="Core/Matrix.c" path="Core/Matrix.c" type="1"/>
+    <File name="Middlewares/ST/STM32_USB_Device_Library/Core/Src" path="" type="2"/>
+    <File name="Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal.c" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal.c" type="1"/>
+    <File name="Middlewares/Third_Party/FreeRTOS/Source/include" path="" type="2"/>
+    <File name="Middlewares/Third_Party/FreeRTOS/Source/include/timers.h" path="STM32CubeMX_Keyboard_Controller_48p/Middlewares/Third_Party/FreeRTOS/Source/include/timers.h" type="1"/>
+    <File name="Drivers/STM32L0xx_HAL_Driver/Inc" path="" type="2"/>
+    <File name="Middlewares/ST" path="" type="2"/>
+    <File name="Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_tim_ex.h" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_tim_ex.h" type="1"/>
+    <File name="Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h" path="STM32CubeMX_Keyboard_Controller_48p/Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h" type="1"/>
+    <File name="Drivers/CMSIS" path="" type="2"/>
+    <File name="Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h" type="1"/>
+    <File name="Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_crc.h" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_crc.h" type="1"/>
+    <File name="Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc_ex.c" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc_ex.c" type="1"/>
+    <File name="Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h" path="STM32CubeMX_Keyboard_Controller_48p/Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h" type="1"/>
+    <File name="Drivers/CMSIS/Device/ST/STM32L0xx" path="" type="2"/>
+    <File name="Middlewares/ST/STM32_USB_Device_Library/Class/TCKB_HID/Src" path="" type="2"/>
+    <File name="Middlewares/Third_Party/FreeRTOS/Source" path="" type="2"/>
+    <File name="Middlewares/Third_Party/FreeRTOS/Source/portable" path="" type="2"/>
+    <File name="Misc/Utils.h" path="../Misc/Utils.h" type="1"/>
+    <File name="Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_dma.c" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_dma.c" type="1"/>
+    <File name="Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_pwr.c" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_pwr.c" type="1"/>
+    <File name="Drivers/CMSIS/Include/arm_const_structs.h" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/CMSIS/Include/arm_const_structs.h" type="1"/>
+    <File name="Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_pcd.c" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_pcd.c" type="1"/>
+    <File name="Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_gpio_ex.h" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_gpio_ex.h" type="1"/>
+    <File name="Inc/main.h" path="STM32CubeMX_Keyboard_Controller_48p/Inc/main.h" type="1"/>
+    <File name="Src" path="" type="2"/>
+    <File name="Core/Matrix.h" path="Core/Matrix.h" type="1"/>
+    <File name="Core" path="" type="2"/>
+    <File name="Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_rcc.h" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_rcc.h" type="1"/>
+    <File name="Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_cortex.h" path="STM32CubeMX_Keyboard_Controller_48p/Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_cortex.h" type="1"/>
+    <File name="Middlewares/Third_Party/FreeRTOS/Source/event_groups.c" path="STM32CubeMX_Keyboard_Controller_48p/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c" type="1"/>
+  </Files>
+</Project>
