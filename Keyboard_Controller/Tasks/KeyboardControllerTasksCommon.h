@@ -1,7 +1,13 @@
 #ifndef KEYBOARD_CONTROLLER_TASKS_COMMON_H
 #define KEYBOARD_CONTROLLER_TASKS_COMMON_H
 
-#include "stm32l0xx_hal.h"
+#if defined(STM32L053xx)
+  #include "stm32l0xx_hal.h"
+#elif defined(STM32L100xB) || defined(STM32L100x8)
+  #include "stm32l1xx_hal.h"
+#else
+  #error "UNDEFINED TARGET"
+#endif
 #include "cmsis_os.h"
 #include "FreeRTOSConfig.h"
 

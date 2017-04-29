@@ -3,7 +3,13 @@
 
 #include "TCKB_Common_Constants.h"
 #include "Keys.h"
-#include "stm32l0xx_hal.h"
+#if defined(STM32L053xx)
+  #include "stm32l0xx_hal.h"
+#elif defined(STM32L100xB) || defined(STM32L100x8)
+  #include "stm32l1xx_hal.h"
+#else
+  #error "UNDEFINED TARGET"
+#endif
 
 #define LAYOUT_DEFAULT_LAYER    0
 #define LAYOUT_FUNCTION_LAYER   1

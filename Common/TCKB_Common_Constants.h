@@ -4,7 +4,13 @@
 #if defined(_PROJECT_LEDS_CONTROLLER)
   #include "stm32l1xx_hal.h"
 #elif defined(_PROJECT_KEYBOARD_CONTROLLER)
-  #include "stm32l0xx_hal.h"
+  #if defined(STM32L053xx)
+    #include "stm32l0xx_hal.h"
+  #elif defined(STM32L100xB) || defined(STM32L100x8)
+    #include "stm32l1xx_hal.h"
+  #else
+    #error "UNDEFINED TARGET"
+  #endif
 #endif
 
 #include "main.h"

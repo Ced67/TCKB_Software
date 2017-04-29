@@ -47,21 +47,26 @@ uint8_t* Get_CPUID_str(void) {
 
 static void Init_UID(void) {
   //Reading binary CPUID
-  uint8_t* uid_base = (uint8_t*)UID_BASE;
-  STM32_UUID_BIN[0]   = uid_base[0x00];
-  STM32_UUID_BIN[1]   = uid_base[0x01];
-  STM32_UUID_BIN[2]   = uid_base[0x02];
-  STM32_UUID_BIN[3]   = uid_base[0x03];
+  #if defined(STM32L053xx) || defined(STM32L100xB) || defined(STM32L100x8)
+    uint8_t* uid_base = (uint8_t*)UID_BASE;
+    STM32_UUID_BIN[0]   = uid_base[0x00];
+    STM32_UUID_BIN[1]   = uid_base[0x01];
+    STM32_UUID_BIN[2]   = uid_base[0x02];
+    STM32_UUID_BIN[3]   = uid_base[0x03];
 
-  STM32_UUID_BIN[4]   = uid_base[0x04];
-  STM32_UUID_BIN[5]   = uid_base[0x05];
-  STM32_UUID_BIN[6]   = uid_base[0x06];
-  STM32_UUID_BIN[7]   = uid_base[0x07];
+    STM32_UUID_BIN[4]   = uid_base[0x04];
+    STM32_UUID_BIN[5]   = uid_base[0x05];
+    STM32_UUID_BIN[6]   = uid_base[0x06];
+    STM32_UUID_BIN[7]   = uid_base[0x07];
 
-  STM32_UUID_BIN[8]   = uid_base[0x14];
-  STM32_UUID_BIN[9]   = uid_base[0x15];
-  STM32_UUID_BIN[10]  = uid_base[0x16];
-  STM32_UUID_BIN[11]  = uid_base[0x17];
+    STM32_UUID_BIN[8]   = uid_base[0x14];
+    STM32_UUID_BIN[9]   = uid_base[0x15];
+    STM32_UUID_BIN[10]  = uid_base[0x16];
+    STM32_UUID_BIN[11]  = uid_base[0x17];
+
+  #else
+    #error "UNDEFINED TARGET"
+  #endif
 
   //Converting to string
   int i;
