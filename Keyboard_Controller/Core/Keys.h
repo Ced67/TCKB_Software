@@ -217,4 +217,6 @@ extern bool     IsMod     (Key_t* Key);
 
 #define KEY_BL_RECORD_ON   {.Flags=FL_STD, 0x00,  .Action=GF_RECORD_ON}
 #define KEY_BL_RECORD_END  {.Flags=FL_STD, 0x00,  .Action=GF_RECORD_END}
+
+#define KEY_SAVE_AS_IDLE   {.Flags=FL_STD, 0x00,  .Action=GF_SAVE_AS_IDLE}
 #endif //KEYS_H

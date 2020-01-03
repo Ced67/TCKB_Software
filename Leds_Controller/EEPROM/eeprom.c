@@ -13,7 +13,7 @@ extern CRC_HandleTypeDef hcrc;
 #define EEP_AnimationSpeed    (*((volatile uint8_t *)            (EEP_base_addr + 0x0C)))
 #define EEP_LedAnimationType  (*((volatile LedAnimationType_e *) (EEP_base_addr + 0x10)))
 #define EEP_Flags             (*((volatile EEP_flags_t *)        (EEP_base_addr + 0x14)))
-
+#define EEP_IdleAnimationType (*((volatile LedAnimationType_e *) (EEP_base_addr + 0x18)))
 
 static uint32_t EEP_Calc_CRC(void) {
   uint32_t _crc = 0;
@@ -49,6 +49,7 @@ static void EEP_Set_Default(void) {
     HAL_FLASHEx_DATAEEPROM_Program(FLASH_TYPEPROGRAMDATA_BYTE, (uint32_t)&EEP_AnimationSpeed,     (ANIMATION_SPEED_MIN + ANIMATION_SPEED_MAX)/2);
     HAL_FLASHEx_DATAEEPROM_Program(FLASH_TYPEPROGRAMDATA_WORD, (uint32_t)&EEP_LedAnimationType,   0);
     HAL_FLASHEx_DATAEEPROM_Program(FLASH_TYPEPROGRAMDATA_BYTE, (uint32_t)&EEP_Flags,              0x01);
+    HAL_FLASHEx_DATAEEPROM_Program(FLASH_TYPEPROGRAMDATA_WORD, (uint32_t)&EEP_IdleAnimationType,  0);
   _EEP_End_Update();
 }
 
@@ -108,6 +109,16 @@ void Set_EEP_LedAnimationType(LedAnimationType_e val) {
   _EEP_End_Update();
 }
 
+
+LedAnimationType_e Get_EEP_IdleAnimationType(void) {
+  return EEP_IdleAnimationType;
+}
+
+void Set_EEP_IdleAnimationType(LedAnimationType_e val) {
+  _EEP_Start_Update();
+    HAL_FLASHEx_DATAEEPROM_Program(FLASH_TYPEPROGRAMDATA_WORD, (uint32_t)&EEP_IdleAnimationType, (uint32_t)val);
+  _EEP_End_Update();
+}
 
 
 

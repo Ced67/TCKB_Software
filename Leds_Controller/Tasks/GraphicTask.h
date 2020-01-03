@@ -17,4 +17,6 @@ typedef struct {
 
 extern Animation_t Current_Animation;
 
+#define IDLE_TIMEOUT_ms (5*60000) //5 minutes
+
 #endif //GRAPHIC_TASK_H

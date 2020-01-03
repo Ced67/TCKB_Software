@@ -24,7 +24,7 @@ typedef enum {
   ANIM_THUNDER,           //Light column keys above the pressed one (with vertical gradient)
   ANIM_CONWAY,            //Conway's Game of Life
   ANIM_SNAKE,             //Moving snake
-  //ANIM_BREATH,            //Fade in and out in loop
+  ANIM_BREATH,            //Fade in and out in loop
   //ANIM_RECORDED,          //Light previously recorded
   _ANIM_END_,
 } LedAnimationType_e;

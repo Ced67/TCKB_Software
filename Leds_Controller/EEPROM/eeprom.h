@@ -7,7 +7,7 @@
 #include "TCKB_Common_Constants.h"
 #include "TCKBLedMatrix.h"
 
-#define TCKB_EEP_LEDS_STRUCT_VERSION 1
+#define TCKB_EEP_LEDS_STRUCT_VERSION 2
 
 
 typedef union {
@@ -32,6 +32,9 @@ extern void Set_EEP_AnimationSpeed(uint8_t val);
 
 extern LedAnimationType_e Get_EEP_LedAnimationType(void);
 extern void Set_EEP_LedAnimationType(LedAnimationType_e val);
+
+extern LedAnimationType_e Get_EEP_IdleAnimationType(void);
+extern void Set_EEP_IdleAnimationType(LedAnimationType_e val);
 
 extern bool Get_EEP_Flags_FullON(void);
 extern void Set_EEP_Flags_FullON(void);

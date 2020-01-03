@@ -58,6 +58,7 @@ typedef enum {
   GF_RECORD_ON,       //Start custom pattern recording  (trigger: BL_CTRL + REC_ON)
   GF_RECORD_END,      //Save custom pattern             (trigger: FN)
 
+  GF_SAVE_AS_IDLE,    //Save current mode as idle mode  (trigger: BL_CTRL + BL_ANIM_SAVE_AS_IDLE)
   _LED_ACTION_END_OF_ENUM,
 } Led_Action_e;
 
